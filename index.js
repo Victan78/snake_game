@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById('name_joueur').innerText = name;
     document.getElementById('easy').addEventListener('click',function(){
         hardMode = false;
+        gameStarted = false;
         fadeExponential = 1.024;
         speed = 150;
         noteElement.innerHTML = `Press space pour commencer Minus!`;
@@ -59,6 +60,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     })
     document.getElementById('hard').addEventListener('click',function(){
         hardMode = true;
+        gameStarted = false;
         fadeExponential = 1.025;
         speed = 50;
         Toastify({
