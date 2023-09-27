@@ -30,6 +30,7 @@ body {
     z-index: 55;
     padding: 4em;
     -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.836);
     
 }
 .menus li{
