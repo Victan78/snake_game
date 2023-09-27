@@ -29,6 +29,7 @@ body {
     backdrop-filter: blur(10px);
     z-index: 55;
     padding: 4em;
+    -webkit-backdrop-filter: blur(10px);
     
 }
 .menus li{
