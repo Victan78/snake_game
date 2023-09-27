@@ -222,7 +222,7 @@ header {
     }
     100%{
         transform:translate(-50%, -50%) scale(1);
-        
+        filter: drop-shadow(0 0 10px #ffffff);
 
     }
 }
@@ -401,6 +401,9 @@ header {
 
     .menus{
         padding: 2em 1em;
+        background: rgba(0, 0, 0, 0.836);
+    filter: drop-shadow(0 0 10px #ffffff);
+    
     }
     
 }
