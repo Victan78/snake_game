@@ -333,6 +333,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
       } catch (error) {
         // Write a note about restarting game and setting difficulty
         const pressSpaceToStart = "Press space pour commencer.";
+        gameStarted = false;
         const changeMode = hardMode
           ? "Revenir à Leger? Press E."
           : "Tu veux te frotter à l'extreme? Press H.";
