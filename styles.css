@@ -1,0 +1,405 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+    overflow: hidden;
+  --size: 15px;
+  --color: rgb(255, 255, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color);
+  background-color: #ff8585;
+  background: linear-gradient(
+    162deg,
+    rgb(0, 0, 0) 0%,
+    rgb(8, 4, 4) 100%
+  );
+}
+.menus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    animation: apparition_bouncing 1s ease-in-out;
+    border:solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.329);
+    backdrop-filter: blur(10px);
+    z-index: 55;
+    padding: 4em;
+    
+}
+.menus li{
+    list-style: none;
+    margin: 1em;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    transition: all 0.4s ease-in-out;
+}
+.menus p{
+    font-size: 1em;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    transition: all 0.4s ease-in-out;
+}
+.menus li:nth-child(1):hover{
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+.menus li:nth-child(2):hover{
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+.menus li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+   background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+.menus li:hover::after{
+    width: 120%;
+    background-color: #ffffff;
+}
+footer {
+  font-size: 0.8em;
+}
+
+@media (min-height: 425px) {
+  body {
+    --size: 20px;
+  }
+
+  footer {
+    height: 40px;
+    font-size: 1em;
+  }
+}
+#name_joueur{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX( -50%) ;
+    font-size: 1em;
+    z-index: 57;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    animation: apparition2 1s ease-in-out;
+    border:solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.329);
+    backdrop-filter: blur(10px);
+    z-index: 55;
+    width: 90dvw;
+    height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 56;
+    transition: all 0.4s ease-in-out;
+}
+form input[type="text"]{
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 900;
+    color: #ffffff;
+    transition: all 0.4s ease-in-out;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.329);
+    border-bottom: solid 2px #ffffff;
+  
+}
+form input[type="submit"]{
+ 
+    min-width: 100px;
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 900;
+    color: #000000;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #ffffff;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-top: 1em;
+    text-align: left;
+    letter-spacing: 0.5em;
+  
+}
+form input[type="submit"]:hover{
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    letter-spacing: 0em;
+    transform: perspective(800px) rotateX(30deg) ;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.score{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    animation: apparition_bouncing 1s ease-in-out;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: calc(var(--size) * 17);
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(15, auto);
+  grid-template-rows: repeat(15, auto);
+  border: var(--size) solid var(--color);
+  transform: perspective(800px) rotateX(0deg) ;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.479) ;
+  
+}
+
+.tile {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-top-right-radius: 15px;
+ 
+}
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes apparition_bouncing{
+    0%{
+        transform: translate(-50%, -50%) scale(0);
+        filter: drop-shadow(0 0 10px #ffffff);
+    }
+    50%{
+        transform:translate(-50%, -50%) scale(1.2);
+        filter: drop-shadow(0 0 10px #ffffff);
+       
+    }
+    100%{
+        transform:translate(-50%, -50%) scale(1);
+        
+
+    }
+}
+
+@keyframes apparition{
+    from{
+        opacity: 0;
+        transform: translateX( -50%) perspective(800px) rotateX(90deg);
+      }
+  to{
+    opacity: 1;
+    transform: translateX( -50%) perspective(800px) rotateX(0deg);
+  }
+
+}
+
+@keyframes apparition2{
+    from{
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translateX( -50%) perspective(800px) rotateX(90deg);
+      }
+  to{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform:  translate(-50%, -50%) perspective(800px) rotateX(0deg);
+  }
+
+}
+
+.github{
+    position: absolute;
+    bottom: 5%;
+    opacity: 0;
+    left: 50%;
+    transform: translateX( -50%) ;
+    font-size: 1em;
+    z-index: 55;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    animation: apparition 3s cubic-bezier(0.175, 0.885, 0.32, 1.175) 2s forwards;
+ 
+}
+
+.github a img:hover{
+    filter: drop-shadow(0 0 5px #ffffff);
+}
+
+.gamepade{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    user-select: none;
+    opacity: 0;
+    transform: translateX( -50%) ;
+    width: 100px;
+    height: 100px;
+    font-size: 1em;
+    z-index: 5;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    animation: apparition 3s cubic-bezier(0.175, 0.885, 0.32, 1.175) 2s forwards;
+ 
+}
+.gamepade .left{
+    position: absolute;
+    user-select: none;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.329);
+    backdrop-filter: blur(10px);
+    border: solid 2px #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.gamepade .right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    user-select: none;
+    transform: translateY(-50%);
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.329);
+    backdrop-filter: blur(10px);
+    border: solid 2px #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.gamepade .up{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:50px;
+    height:50px;
+    user-select: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.329);
+    backdrop-filter: blur(10px);
+    border: solid 2px #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.gamepade .down{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:50px;
+    user-select: none;
+    height:50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.329);
+    backdrop-filter: blur(10px);
+    border: solid 2px #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.gamepade .key:active{
+    background-color: #ffffff;
+    border: solid 2px #ffffff;
+    color: #000000;
+    text-shadow: 0 0 10px #ffffff;
+    letter-spacing: 0em;
+    transform: perspective(800px) rotateX(30deg) ;
+
+    
+}
+
+@media screen and (max-width:800px){
+    .github{
+        top: 0;
+        bottom: auto;
+    }
+    .gamepade{
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        opacity: 0;
+        transform: translateX( -50%) ;
+      width: 80dvw;
+        height: 30dvw;
+    }
+    form input[type="text"]{
+        font-size: 11px;
+    }
+    .menus li{
+        font-size: 1em;
+    }
+    .menus p{
+        font-size: 0.8em;
+    }
+    .score{
+        font-size: 2em;
+    }
+    .github{
+        font-size: 0.8em;
+    }
+
+    body{
+        --size:10px;
+    }
+
+    .menus{
+        padding: 2em 1em;
+    }
+    
+}
