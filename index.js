@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     function resetGame() {
         grid.style.transform = "none";
         // Reset game variables
-
+        containerElement.style.opacity = 1;
 
       // Reset positions
       snakePositions = [168, 169, 170, 171];

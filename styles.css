@@ -25,12 +25,17 @@ body {
     font-size: 2em;
     animation: apparition_bouncing 1s ease-in-out;
     border:solid #ffffff;
-    background-color: rgba(0, 0, 0, 0.87);
+    background: rgb(0, 0, 0);
     backdrop-filter: blur(10px);
     z-index: 55;
-    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90dvw;
+    height: 90dvh;
     -webkit-backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.836);
+
     
 }
 .menus li{
@@ -401,7 +406,8 @@ header {
     }
 
     .menus{
-        padding: 2em 1em;
+      width: 60dvw;
+        height: 60dvh;
        
     filter: drop-shadow(0 0 10px #ffffff);
     
