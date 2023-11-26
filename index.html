@@ -17,11 +17,32 @@
         submit.style.opacity = '0';
         submit.addEventListener('click', (e) => {
             e.preventDefault();
-            if (name.value.length > 5) {
-                localStorage.setItem('name', name.value);
-                window.location.href = 'Game.html';
-            }
-        })
+            // Exemple de données utilisateur à envoyer
+        const userData = {
+            name: `${name.value}`,
+        };
+
+        // Exécution de la requête fetch
+     
+
+        if (name.value.length > 5) {
+                        localStorage.setItem('name', name.value);
+                        fetch('http://localhost:5000/user', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(userData),
+                    })
+                    .then(response => response)
+                    .then(data => console.log('Succès:', data))
+                    .catch((error) => console.error('Erreur:', error));
+                       setTimeout(() => {
+                        window.location.href = 'Game.html';
+                    }, 5000); 
+
+                    }
+                })
         name.addEventListener('keyup', () => {
             if (name.value.length > 2) {
                 submit.style.opacity = '1';

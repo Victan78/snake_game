@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     let fadeSpeed = 5000; // milliseconds it takes the grid to disappear (initially)
     let fadeExponential = 1.024; // after each score it will gradually take more time for the grid to fade
     const contrastIncrease = 0.5; // contrast you gain after each score
-    const color = "white"; // Primary color
+    const color = "#FF5733"; // Primary color
   
    
    const name = this.localStorage.getItem('name');
@@ -302,6 +302,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
           // If it’s time to take a step
           const headPosition = snakePositions[snakePositions.length - 1];
           if (headPosition == applePosition) {
+            
             // Increase score
             score++;
             scoreElement.innerText = hardMode ? `H ${score}` : score;
@@ -343,7 +344,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
        
         containerElement.style.opacity = 1;
         console.log(error);
-        document.getElementById('situation').innerText = `LOSER Tu veux rejouer?`;
+        document.getElementById('situation').innerText = `Tu veux rejouer? choisis un niveau de difficulté.`;
         document.getElementById('menus_contenaire').style.display = 'initial';
         Toastify({
             text: "🤣🤣🤣🤣🤣You Lose!",
@@ -450,7 +451,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
           "background-color": color,
           "border-radius":  0
         })
-        grid.style.transform = "perspective(800px) rotateY(20deg)";}
+        grid.style.transform = "perspective(800px) rotateY(20deg)";
+    
+      }
   
       if (headDi == "down")
       {  setTile(head, {
@@ -477,6 +480,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
       // Transition head
       const head = tiles[snakePositions[snakePositions.length - 1]];
       const headDi = headDirection();
+   
       const headValue = `${percentageOfStep * 100}%`;
       if (headDi == "right" || headDi == "left") head.style.width = headValue;
       if (headDi == "down" || headDi == "up") head.style.height = headValue;
@@ -561,11 +565,13 @@ window.addEventListener("DOMContentLoaded", function (event) {
       do {
         newPosition = Math.floor(Math.random() * width * height);
       } while (snakePositions.includes(newPosition));
-  
+      const list10aleatorybackground = ['linear-gradient(to bottom, #fff, #96c93d)','linear-gradient(to bottom, #fff, #ff0000)','linear-gradient(to bottom, #fff, #ff00ff)','linear-gradient(to bottom, #fff, #00ffff)','linear-gradient(to bottom, #fff, #ffff00)']
+
       // Set new apple
       setTile(tiles[newPosition], {
-        "background-color": color,
-        "border-radius": "50%"
+        "background": `${list10aleatorybackground[Math.floor(Math.random() * list10aleatorybackground.length)]}`,
+        "border-radius": "50%",
+        "box-shadow": "0 0 10px 10px  rgba(255,255,255,0.18951330532212884)"
       });
   
       // Note that the apple is here

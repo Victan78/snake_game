@@ -23,7 +23,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2em;
-    animation: apparition_bouncing 1s ease-in-out;
+    animation: apparition_bouncing 1s ease-in-out forwards;
     border:solid #ffffff;
     background: rgb(0, 0, 0);
     backdrop-filter: blur(10px);
@@ -44,41 +44,44 @@ body {
     cursor: pointer;
     position: relative;
     text-align: center;
+    padding: 0.5em 1em;
+    border: solid 2px #ffffff;
     font-size: 1.5em;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 0 0 10px #ffffff;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .menus p{
     font-size: 1em;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 0 0 10px #ffffff;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .menus li:nth-child(1):hover{
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    background: #ff0000;
 }
 .menus li:nth-child(2):hover{
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #000000;
+    text-shadow: 0 0 10px #000000;
+    background: #ffffff;
 }
 .menus li::after{
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-   background-color: white;
-    transition: all 0.2s ease-in-out;
+    right: 0%;
+    
+   
+ 
+    transition: all 0.1s ease-in-out;
 }
 .menus li:hover::after{
-    width: 120%;
-    background-color: #ffffff;
+   content: "#";
+ 
 }
 footer {
   font-size: 0.8em;
@@ -181,7 +184,7 @@ form input[type="submit"]:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 4em;
-    animation: apparition_bouncing 1s ease-in-out;
+    animation: apparition_bouncing 1s ease-in-out forwards;
 }
 
 header {
@@ -222,12 +225,12 @@ header {
         filter: drop-shadow(0 0 10px #ffffff);
     }
     50%{
-        transform:translate(-50%, -50%) scale(1.2);
+        transform:translate(-50%, -50%) scale(0.85);
         filter: drop-shadow(0 0 10px #ffffff);
        
     }
     100%{
-        transform:translate(-50%, -50%) scale(1);
+        transform:translate(-50%, -50%) scale(0.8);
      
 
     }
